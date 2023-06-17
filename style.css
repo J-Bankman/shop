@@ -1,83 +1,60 @@
-html,
-body,
-#root,
-.App {
-  height: 100%;
-  width: 100%;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
-html,
-body {
-  max-width: 100vw;
-  overflow: hidden;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: grey;
-  height: 100vh;
-}
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 56.25%;
-}
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
-  background-size: 100% 4px, 30px 100%;
-  z-index: 1;
-  animation: flicker 100ms infinite;
-}
-.video-overlay:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(255, 255, 255);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  z-index: 2;
-}
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
+
+h1, p, h2, h3, h4, ul, li, div {
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes flicker {
-  0% {
-    transform: translateY(1px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+body {
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: Roboto;
+}
+
+.loading-page {
+      background-image: linear-gradient(#17082e 0,#1a0933 7%,#1a0933 80%,#0c1f4c 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-page .counter {
+  text-align: center;
+}
+.loading-page .counter p {
+  font-size: 40px;
+  font-weight: 100;
+  color: #0d6af6;
+}
+.loading-page .counter h1 {
+  color: white;
+  font-size: 60px;
+  margin-top: -10px;
+}
+.loading-page .counter hr {
+  background: #0d6af6;
+  border: none;
+  height: 1px;
+}
+.loading-page .counter {
+  position: relative;
+  width: 200px;
+}
+.loading-page .counter h1.abs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.loading-page .counter .color {
+  width: 0px;
+  overflow: hidden;
+  color: #0d6af6;
 }
