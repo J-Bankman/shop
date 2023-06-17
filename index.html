@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>VCC WORLD</title>
-  <link rel="stylesheet" href="./style.css">
-  
-  <link rel = "icon" href = "https://img.icons8.com/?size=512&id=47301&format=png" type = "image/x-icon">
-
+    <meta charset="UTF-8">
+    <title>Loading Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel = "icon" href = "https://img.icons8.com/?size=512&id=47301&format=png" type = "image/x-icon">
 </head>
 <body>
-<iframe id="iframe" src='https://pos.btcpayserver.it/apps/3Dq1Ago7FV5GG8ff6cAzHBuobDi1/pos' style='max-width: 100%; border: 0;'></iframe>
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+    <section>
+      <iframe id="iframe" src='https://pos.btcpayserver.it/apps/3Dq1Ago7FV5GG8ff6cAzHBuobDi1/pos' style='max-width: 100%; border: 0;'></iframe>
 <script>
   window.onload = function() {
     var iframe = document.getElementById("iframe");
@@ -21,7 +23,24 @@
     iframe.style.zIndex = "2";
   }
 </script>
-<!-- partial -->
-  
+      
+    </section>
+    <!-- Loading Script -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+	  function counter(){
+		  var count = setInterval(function(){
+			  var c = parseInt($('.counter').text());
+			  $('.counter').text((++c).toString());
+			  if (c == 100){
+				  clearInterval(count);
+				  $('.counter').addClass('hide')
+				  $('.preloader').addClass('active')
+			  }
+        // 1-100, 1 superfast countdown 50 mild countdown and so on, the higher number the slower.
+		  },30)
+	  }
+	  counter()
+</script>
 </body>
 </html>
