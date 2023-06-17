@@ -1,45 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-<meta charset="UTF-8">
-<title>VCC WORLD</title>
-<link rel = "icon" href = "https://img.icons8.com/?size=512&id=46096&format=png" type = "image/x-icon">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="loading-page">
-  <div class="counter">
-    <p>loading</p>
-    <h1>0%
-      <!--
-      h1.abs loading
-      h1.abs.color loading
-      -->
-    </h1>
-    <hr/>
-  </div>
-</div>
-
-
-<iframe id="iframe" src='https://pos.btcpayserver.it/apps/3Dq1Ago7FV5GG8ff6cAzHBuobDi1/pos' style='max-width: 100%; border: 0;'></iframe>
-	
-<script>
-  window.onload = function() {
-    var iframe = document.getElementById("iframe");
-    iframe.style.position = "fixed";
-    iframe.style.top = "0";
-    iframe.style.left = "0";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.zIndex = "2";
-  }
-</script>
-
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="./script.js"></script>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Loading Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      /* Center the loading animation vertically and horizontally */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+    <script>
+      // Preload the shop.html page in the background
+      var shopPage = new Image();
+      shopPage.src = "shop.html";
+      
+      // Redirect to the shop.html page after 5 seconds
+      setTimeout(function() {
+        window.location.href = "shop.html";
+      }, 5000);
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>V</p>
+      <p>C</p>
+      <p>C</p>
+      <br>
+      <p>W</p>
+      <p>O</p>
+      <p>R</p>
+      <p>L</p>
+      <p>D</p>
+    </div>
+  </body>
 </html>
